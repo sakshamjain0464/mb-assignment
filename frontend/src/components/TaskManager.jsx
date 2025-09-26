@@ -90,7 +90,7 @@ function TaskManager ({ user, onLogout }) {
     if (user.role === 'admin') {
       try {
         const response = await axios.get(
-          'http://localhost:5000/api/users',
+          'https://mb-assignment.onrender.com/api/users',
           getHeaders()
         )
         setUsers(response.data)
@@ -104,7 +104,7 @@ function TaskManager ({ user, onLogout }) {
   async function getStats () {
     try {
       const response = await axios.get(
-        'http://localhost:5000/api/tasks/stats',
+        'https://mb-assignment.onrender.com/api/tasks/stats',
         getHeaders()
       )
       setStats(response.data)
@@ -166,7 +166,7 @@ function TaskManager ({ user, onLogout }) {
     event.preventDefault()
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/tasks',
+        'https://mb-assignment.onrender.com/api/tasks',
         formData,
         getHeaders()
       )
@@ -183,7 +183,7 @@ function TaskManager ({ user, onLogout }) {
     event.preventDefault()
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/tasks/${editingTask._id}`,
+        `https://mb-assignment.onrender.com/api/tasks/${editingTask._id}`,
         formData,
         getHeaders()
       )
@@ -203,7 +203,7 @@ function TaskManager ({ user, onLogout }) {
   async function deleteTask () {
     try {
       await axios.delete(
-        `http://localhost:5000/api/tasks/${taskToDelete._id}`,
+        `https://mb-assignment.onrender.com/api/tasks/${taskToDelete._id}`,
         getHeaders()
       )
 
@@ -221,7 +221,7 @@ function TaskManager ({ user, onLogout }) {
   async function changeStatus (taskId, newStatus) {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/tasks/${taskId}/status`,
+        `https://mb-assignment.onrender.com/api/tasks/${taskId}/status`,
         { status: newStatus },
         getHeaders()
       )
@@ -240,7 +240,7 @@ function TaskManager ({ user, onLogout }) {
   async function changePriority (taskId, newPriority) {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/tasks/${taskId}/priority`,
+        `https://mb-assignment.onrender.com/api/tasks/${taskId}/priority`,
         { priority: newPriority },
         getHeaders()
       )
