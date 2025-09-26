@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { User, Lock, Mail, Eye, EyeOff } from 'lucide-react'
 import axios from 'axios'
 
-const API_URL = 'http://localhost:5000/api'
+const API_URL = 'https://mb-assignment.onrender.com/api'
 
 const AuthForm = ({ onLogin }) => {
   const [isLogin, setIsLogin] = useState(true)

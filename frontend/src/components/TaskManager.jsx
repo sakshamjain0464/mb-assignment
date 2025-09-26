@@ -71,7 +71,7 @@ function TaskManager ({ user, onLogout }) {
       setLoading(true)
 
       // Build the URL with filters
-      let url = `http://localhost:5000/api/tasks?page=${currentPage}&limit=10`
+      let url = `https://mb-assignment.onrender.com/api/tasks?page=${currentPage}&limit=10`
       if (filterStatus !== 'all') url += `&status=${filterStatus}`
       if (filterPriority !== 'all') url += `&priority=${filterPriority}`
 
